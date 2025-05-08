@@ -1,0 +1,216 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Feliz Día de las Madres</title>
+    <style>
+        @keyframes breeze {
+            0%, 100% { transform: translate(0, 0) rotate(0deg); }
+            25% { transform: translate(-3px, -2px) rotate(-2deg); }
+            50% { transform: translate(0, -4px) rotate(0deg); }
+            75% { transform: translate(3px, -2px) rotate(2deg); }
+        }
+        @keyframes float {
+            0%, 100% { transform: translateY(0) rotate(0deg); }
+            50% { transform: translateY(-20px) rotate(5deg); }
+        }
+        .flower {
+            position: absolute;
+            animation: breeze 9s ease-in-out infinite;
+            z-index: 1;
+            filter: drop-shadow(3px 3px 5px rgba(0,0,0,0.15));
+            width: 120px;
+            height: 120px;
+        }
+        .heart {
+            position: absolute;
+            animation: float 7s ease-in-out infinite;
+            z-index: 1;
+            filter: drop-shadow(2px 2px 3px rgba(0,0,0,0.1));
+        }
+        .scroll-container {
+            overflow-y: auto;
+            max-height: 380px;
+            padding-right: 10px;
+            margin: 15px 0;
+            scrollbar-width: thin;
+            scrollbar-color: #ffb6c1 #fff0f5;
+        }
+        .scroll-container::-webkit-scrollbar {
+            width: 6px;
+        }
+        .scroll-container::-webkit-scrollbar-track {
+            background: #fff0f5;
+            border-radius: 10px;
+        }
+        .scroll-container::-webkit-scrollbar-thumb {
+            background-color: #ffb6c1;
+            border-radius: 10px;
+        }
+        .floral-frame {
+            position: absolute;
+            width: calc(100% + 20px);
+            height: calc(100% + 20px);
+            top: -10px;
+            left: -10px;
+            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M30,50 Q50,30 70,50 Q50,70 30,50" fill="none" stroke="%23ff85a2" stroke-width="1.5" stroke-opacity="0.3"/></svg>');
+            background-size: 50px 50px;
+            border-radius: 15px;
+            pointer-events: none;
+            z-index: -1;
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; font-family: 'Georgia', serif; background: linear-gradient(135deg, #fff0f5, #ffebf2); min-height: 100vh; overflow: hidden;">
+
+    <!-- Flores realistas SVG (10 flores ahora) -->
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q55,10 60,20 Q70,25 60,30 Q65,40 50,35 Q35,40 40,30 Q30,25 40,20 Q45,10 50,20" fill="%23FFD700"/><circle cx="50" cy="30" r="8" fill="%23FF6347"/></svg>' class="flower" style="top: 8%; left: 7%; width: 100px; animation-delay: 0s;">
+    
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 Q60,5 70,15 Q80,20 70,30 Q80,40 50,35 Q20,40 30,30 Q20,20 30,15 Q40,5 50,15" fill="%23FF69B4"/><circle cx="50" cy="30" r="10" fill="%23FF1493"/></svg>' class="flower" style="top: 12%; right: 6%; width: 130px; animation-delay: 1.2s;">
+    
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q55,5 65,15 Q75,20 70,35 Q85,40 60,45 Q65,60 50,50 Q35,60 40,45 Q15,40 30,35 Q25,20 35,15 Q45,5 50,20" fill="%23FFA07A"/><circle cx="50" cy="35" r="7" fill="%23DB7093"/></svg>' class="flower" style="bottom: 18%; left: 12%; width: 110px; animation-delay: 0.8s;">
+    
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,25 Q60,10 75,20 Q85,35 70,45 Q80,60 50,55 Q20,60 30,45 Q15,35 25,20 Q40,10 50,25" fill="%23FF8C00"/><circle cx="50" cy="40" r="9" fill="%23FF4500"/></svg>' class="flower" style="bottom: 22%; right: 8%; width: 140px; animation-delay: 1.5s;">
+    
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,20 Q60,15 65,25 Q75,30 65,40 Q75,50 50,45 Q25,50 35,40 Q25,30 35,25 Q40,15 50,20" fill="%23C71585"/><circle cx="50" cy="35" r="8" fill="%23FF00FF"/></svg>' class="flower" style="top: 65%; right: 5%; width: 120px; animation-delay: 0.5s;">
+
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,15 Q60,0 75,10 Q85,25 75,40 Q90,50 50,45 Q10,50 25,40 Q15,25 25,10 Q40,0 50,15" fill="%23FF6B8B"/><circle cx="50" cy="35" r="12" fill="%23FF4785"/></svg>' class="flower" style="top: 30%; left: 10%; width: 150px; animation-delay: 1s;">
+
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,25 Q65,10 80,25 Q90,40 75,50 Q85,65 50,60 Q15,65 25,50 Q10,40 20,25 Q35,10 50,25" fill="%23FF85A2"/><circle cx="50" cy="45" r="10" fill="%23FF1493"/></svg>' class="flower" style="bottom: 10%; left: 5%; width: 130px; animation-delay: 1.8s;">
+
+    <img src='data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><path d="M50,30 Q60,20 70,30 Q80,40 65,50 Q75,60 50,55 Q25,60 35,50 Q20,40 30,30 Q40,20 50,30" fill="%23FFB6C1"/><circle cx="50" cy="40" r="7" fill="%23FFFFFF"/></svg>' class="flower" style="top: 75%; right: 15%; width: 100px; animation-delay: 2s;">
+
+    <!-- Corazones flotantes (más corazones ahora) -->
+    <div class="heart" style="top: 72%; left: 18%; font-size: 40px; color: rgba(255,105,180,0.4);">❤️</div>
+    <div class="heart" style="top: 82%; right: 12%; font-size: 45px; color: rgba(255,20,147,0.4); animation-delay: 0.7s;">💖</div>
+    <div class="heart" style="top: 28%; left: 28%; font-size: 50px; color: rgba(219,112,147,0.4); animation-delay: 1.3s;">💗</div>
+    <div class="heart" style="top: 15%; left: 20%; font-size: 35px; color: rgba(255,105,180,0.3); animation-delay: 2s;">💓</div>
+    <div class="heart" style="bottom: 25%; right: 20%; font-size: 40px; color: rgba(255,20,147,0.3); animation-delay: 1.5s;">💞</div>
+
+    <!-- Nuevos elementos: regalos y chocolates -->
+    <div class="heart" style="top: 85%; left: 10%; font-size: 45px; color: rgba(139,69,19,0.3); animation-delay: 0.3s;">🎁</div>
+    <div class="heart" style="top: 20%; right: 20%; font-size: 40px; color: rgba(210,105,30,0.4); animation-delay: 1.7s;">🍫</div>
+    <div class="heart" style="bottom: 15%; right: 5%; font-size: 50px; color: rgba(255,215,0,0.4); animation-delay: 2.2s;">💝</div>
+
+    <div id="contenedor" style="display: flex; justify-content: center; align-items: center; height: 100vh; position: relative; z-index: 10;">
+        <!-- Sobre mejorado -->
+        <div id="sobre" style="width: 340px; height: 240px; background: linear-gradient(160deg, #ff8fab, #ff6b8b); position: relative; cursor: pointer; display: flex; justify-content: center; align-items: center; border-radius: 0 0 10px 10px; box-shadow: 0 20px 35px rgba(255,105,180,0.5); transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 10;"
+             onclick="abrirSobre()">
+            <div id="solapa" style="position: absolute; top: -70px; left: 0; width: 340px; height: 80px; background: linear-gradient(160deg, #ff6b8b, #ff8fab); border-radius: 10px 10px 0 0; transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); box-shadow: 0 -8px 20px rgba(0,0,0,0.15); transform-origin: bottom center;"></div>
+            <p style="z-index: 2; font-size: 30px; color: white; text-shadow: 1px 1px 5px rgba(0,0,0,0.3); font-weight: bold; position: relative; font-family: 'Brush Script MT', cursive;">Para Mago 💐</p>
+            <div style="position: absolute; bottom: 20px; right: 20px; font-size: 15px; color: rgba(255,255,255,0.95); z-index: 2; font-style: italic;">Haz clic aquí para abrir el sobre</div>
+        </div>
+        
+        <!-- Carta con fondo limpio -->
+        <div id="carta" style="width: 400px; height: 550px; background-color: #fff9fc; position: absolute; padding: 30px; box-shadow: 0 25px 50px rgba(255,105,180,0.6); display: none; flex-direction: column; align-items: center; text-align: center; border-radius: 15px; cursor: pointer; transform: scale(0); opacity: 0; transition: all 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55); z-index: 5; border: 1px solid #ffb6c1; overflow: hidden;">
+            <div class="floral-frame"></div>
+            
+            <div style="position: absolute; top: -25px; left: 30px; right: 30px; height: 50px; background: linear-gradient(to right, #ff6b8b, #ff8fab, #ff6b8b); border-radius: 25px; box-shadow: 0 8px 15px rgba(0,0,0,0.1);"></div>
+            
+            <h1 style="color: #ff4785; margin-top: 40px; margin-bottom: 20px; font-size: 36px; text-shadow: 1px 1px 3px rgba(0,0,0,0.1); letter-spacing: 1px; font-family: 'Brush Script MT', cursive;">¡Feliz Día Mamá!</h1>
+            
+            <div style="width: 90%; height: 2px; background: linear-gradient(to right, transparent, #ffb6c1, transparent); margin: 10px auto;"></div>
+            
+            <div class="scroll-container">
+                <p style="margin-top: 10px; font-size: 18px; color: #555; line-height: 1.8; text-align: left;">Querida mamá:</p>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 20px;">Hoy, en este día tan especial, quiero tomarme un momento para expresarte todo lo que significas para mí. Eres el pilar de nuestra familia, la luz que guía mis pasos y el amor que da sentido a mi vida.</p>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Se que no soy el mejor y aún tengo que mejorar muchas cosas, pero esta vez quisiera darte, aunque sea este regalo, no tendré dinero para poder darte algo más grande, pero con lo sé y con lo que puedo te envió esta carta.</p>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="font-size: 40px; color: #ff4785; display: inline-block; animation: float 5s ease-in-out infinite;">🌷</div>
+                </div>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Gracias por todas las noches que te quedaste despierta cuando estaba enfermo, todas esas veces que te sacrificabas por nosotros trabajando tanto, por todos los sacrificios que hiciste para darme una buena educación, por todo el esfuerzo que costo criar a este tonto hijo tuyo, por tantos sacrificios que te costamos los 3 y más aún por velar primero por nosotros de verdad gracias.</p>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Ahora que soy mayor, aunque igual de wey, valoro aún más todo lo que has hecho por mí y lo tanto que me sigues ayudando y apoyando. Comprendo el esfuerzo que hay detrás de cada sonrisa, de cada regaño que me diste, eran para guiarme, incluso cuando estabas cansada siempre estabas para ser mi guía a pesar de lo terco y wey que era siempre estabas para corregir mi camino. Reconozco la sabiduría en tus consejos, que en su momento quizás no supe apreciar que eran lo mejor para mí y que ahora cada día estoy aprendido el porqué de esas palabras.</p>
+                
+                <div style="text-align: center; margin: 20px 0;">
+                    <div style="font-size: 40px; color: #ff4785; display: inline-block; animation: float 6s ease-in-out infinite;">🌸</div>
+                </div>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Eres mi ejemplo a seguir, mi heroína personal, la persona más fuerte, inteligente y amorosa que conozco. Espero poder llegar a ser, aunque sea la mitad de bueno como tú lo has sido conmigo.</p>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">En este Día de las Madres, quiero que sepas que mi amor por ti es infinito. Que cada día te agradezco por ser exactamente como eres. Por ser la guía de la familia. Que no hay regalo que pueda expresar lo que siento por ti y lo agradecido que estoy de que seas mi madre y mi guía en esta vida.</p>
+
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Tal vez no soy el mejor expresando esto, pero eres el motor que me ayudo a ser lo que soy y a llegar a donde estoy, tu me ayudaste a construir mi camino, a mejorar, aprender y no rendirme, a pesar de los problemas que te cause no te rendiste siendo mi pilar y agradezco hoy en día la gran madre que tengo y el gran camino al que me guio.</p>
+
+                <div style="text-align: center; margin: 30px 0;">
+                    <div style="font-size: 50px; color: #ff4785; display: inline-block; animation: float 5s ease-in-out infinite;">💖</div>
+                </div>
+
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Gracias por ser el pilar de la familia tantos años, Gracias por ser la guía de nuestros caminos, se que un día voy a poder regresarte algo de lo tanto que me diste, por ahora solo podre darte esta carta y agradecerte de ser mi madre, gracias por todo de verdad.</p>
+                
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Te prometo seguir haciendo todo lo posible para ser alguien de quien te sientas orgullosa, porque tu orgullo es el mayor premio que podría desear.</p>
+
+                <p style="font-size: 16px; color: #666; line-height: 1.7; text-align: left; margin-top: 15px;">Gracias por ser mi mamá. <h1>Felis día de la madres</h1>.</p>
+                
+                <div style="text-align: center; margin: 30px 0;">
+                    <div style="font-size: 50px; color: #ff4785; display: inline-block; animation: float 5s ease-in-out infinite;">💖</div>
+                </div>
+            </div>
+            
+            <div style="margin-top: auto; width: 100%; position: relative;">
+                <div style="width: 100%; height: 1px; background: linear-gradient(to right, transparent, #ffb6c1, transparent); margin: 10px 0;"></div>
+                <p style="font-size: 17px; color: #ff4785; font-style: italic; font-weight: bold; margin-top: 15px;">Con todo mi amor,</p>
+                <p style="font-size: 17px; color: #ff4785; font-style: italic; margin-bottom: 15px;">Tú hijo todo wey Juan</p>
+                <div style="margin-top: 10px; font-size: 13px; color: #ff85a2; background-color: rgba(255,182,193,0.2); padding: 10px; border-radius: 20px;">Desliza para leer más ↑↓ • Haz clic para cerrar la carta</div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function abrirSobre() {
+            const sobre = document.getElementById('sobre');
+            const carta = document.getElementById('carta');
+            const solapa = document.getElementById('solapa');
+            
+            // Animación del sobre
+            sobre.style.transform = 'translateY(-40px) scale(1.15)';
+            sobre.style.opacity = '0';
+            
+            // Animación de la solapa
+            solapa.style.transform = 'translateY(-50px) rotateX(180deg)';
+            solapa.style.opacity = '0.6';
+            
+            // Mostrar la carta con animación
+            setTimeout(() => {
+                sobre.style.display = 'none';
+                carta.style.display = 'flex';
+                setTimeout(() => {
+                    carta.style.transform = 'scale(1)';
+                    carta.style.opacity = '1';
+                }, 50);
+            }, 800);
+        }
+        
+        function cerrarCarta() {
+            const sobre = document.getElementById('sobre');
+            const carta = document.getElementById('carta');
+            const solapa = document.getElementById('solapa');
+            
+            // Ocultar la carta
+            carta.style.transform = 'scale(0)';
+            carta.style.opacity = '0';
+            
+            setTimeout(() => {
+                carta.style.display = 'none';
+                sobre.style.display = 'flex';
+                
+                // Resetear animación del sobre
+                setTimeout(() => {
+                    sobre.style.transform = 'translateY(0) scale(1)';
+                    sobre.style.opacity = '1';
+                    solapa.style.transform = 'translateY(0) rotateX(0)';
+                    solapa.style.opacity = '1';
+                }, 50);
+            }, 800);
+        }
+
+        // Asignar evento de clic a la carta
+        document.getElementById('carta').addEventListener('click', cerrarCarta);
+    </script>
+</body>
+</html>
